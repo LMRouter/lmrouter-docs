@@ -45,7 +45,7 @@ export async function generateMetadata(
   if (!page) notFound();
 
   return {
-    title: page.data.title,
+    title: `${page.data.title} | LMRouter`,
     description: page.data.description,
   };
 }
