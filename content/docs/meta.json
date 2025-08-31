@@ -1,6 +1,7 @@
 {
   "pages": [
     "---Introduction---",
-    "index"
+    "index",
+    "models"
   ]
 }
