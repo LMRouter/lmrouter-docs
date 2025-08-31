@@ -5,4 +5,100 @@ description: Get started with LMRouter
 
 ## Introduction
 
-LMRouter is an open-source, all-in-one API router that gives AI developers a single, unified way to connect to the best model providers.
+**LMRouter** is an **open-source**, **all-in-one** API router that gives AI developers a single, unified way to connect to the best model providers. It provides **OpenAI** and **Anthropic** compatible API endpoints, so you can use it with any OpenAI or Anthropic compatible client.
+
+## Using the OpenAI-Compatible Endpoint
+
+You are able to drop-in replace your OpenAI endpoint with the LMRouter endpoint, and use the LMRouter API key:
+
+```typescript tab="TypeScript"
+import OpenAI from "openai";
+
+const main = async () => {
+  const openai = new OpenAI({
+    baseURL: "https://api.lmrouter.com/openai/v1",
+    apiKey: "<LMROUTER_API_KEY>",
+    defaultHeaders: {
+      "HTTP-Referer": "<YOUR_SITE_URL>",
+      "X-Title": "<YOUR_SITE_NAME>",
+    },
+  });
+
+  const completion = await openai.chat.completions.create({
+    model: "openai/gpt-4o",
+    messages: [
+      {
+        role: "user",
+        content:
+          'How many times does the letter "R" appear in the word "LMRouter"?',
+      },
+    ],
+  });
+
+  console.log(completion.choices[0].message.content);
+};
+
+main();
+```
+
+```python tab="Python"
+from openai import OpenAI
+
+client = OpenAI(
+  base_url="https://api.lmrouter.com/openai/v1",
+  api_key="<LMROUTER_API_KEY>",
+)
+
+completion = client.chat.completions.create(
+  extra_headers={
+    "HTTP-Referer": "<YOUR_SITE_URL>",
+    "X-Title": "<YOUR_SITE_NAME>",
+  },
+  model="openai/gpt-4o",
+  messages=[
+    {
+      "role": "user",
+      "content": 'How many times does the letter "R" appear in the word "LMRouter"?'
+    }
+  ]
+)
+
+print(completion.choices[0].message.content)
+```
+
+```bash tab="Bash"
+curl https://api.lmrouter.com/openai/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $LMROUTER_API_KEY" \
+  -d '{
+  "model": "openai/gpt-4o",
+  "messages": [
+    {
+      "role": "user",
+      "content": "How many times does the letter \"R\" appear in the word \"LMRouter\"?"
+    }
+  ]
+}'
+```
+
+Apart from the chat completions endpoint, LMRouter also supports
+
+* Image generation
+* Image editing
+* Embeddings
+* Responses
+* Audio speech
+* Audio transcriptions
+* Audio translations
+
+endpoints.
+
+## Using Claude Code
+
+You are able to use the LMRouter Anthropic-compatible endpoint with Claude Code by setting the `ANTHROPIC_BASE_URL` and `ANTHROPIC_AUTH_TOKEN` environment variables. You are able to use any model provided by LMRouter with Claude Code:
+
+```bash tab="Bash"
+ANTHROPIC_BASE_URL=https://api.lmrouter.com/anthropic \
+ANTHROPIC_AUTH_TOKEN=$LMROUTER_API_KEY \
+ANTHROPIC_MODEL=$MODEL_NAME claude
+```
