@@ -2,6 +2,9 @@
   "pages": [
     "---Introduction---",
     "index",
-    "models"
+    "models",
+    "---Legal---",
+    "terms",
+    "privacy"
   ]
 }
