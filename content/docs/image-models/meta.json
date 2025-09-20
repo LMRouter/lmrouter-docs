@@ -1,0 +1,7 @@
+{
+  "pages": [
+    "image-generation",
+    "image-editing"
+  ],
+  "defaultOpen": true
+}

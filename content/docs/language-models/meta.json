@@ -1,0 +1,8 @@
+{
+  "pages": [
+    "chat-completions",
+    "messages",
+    "responses"
+  ],
+  "defaultOpen": true
+}

@@ -1,0 +1,8 @@
+{
+  "pages": [
+    "speech",
+    "transcriptions",
+    "translations"
+  ],
+  "defaultOpen": true
+}
