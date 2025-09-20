@@ -2,3 +2,21 @@
 title: Messages API
 description: Generate messages with LMRouter
 ---
+
+The messages endpoint provided by LMRouter is compatible with the Anthropic messages endpoint. It is available at
+
+```
+https://api.lmrouter.com/anthropic/v1/messages
+```
+
+Please refer to the [Anthropic messages endpoint](https://docs.anthropic.com/en/api/messages) for more information on how to use the messages endpoint.
+
+## Use with Claude Code
+
+You are able to use the LMRouter Anthropic-compatible endpoint with Claude Code by setting the `ANTHROPIC_BASE_URL` and `ANTHROPIC_AUTH_TOKEN` environment variables. You are able to use any model provided by LMRouter with Claude Code:
+
+```bash tab="Bash"
+ANTHROPIC_BASE_URL=https://api.lmrouter.com/anthropic \
+ANTHROPIC_AUTH_TOKEN=$LMROUTER_API_KEY \
+ANTHROPIC_MODEL=$MODEL_NAME claude
+```

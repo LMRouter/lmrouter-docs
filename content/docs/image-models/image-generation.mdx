@@ -2,3 +2,23 @@
 title: Generate Images
 description: Generate images with LMRouter
 ---
+
+The image generation endpoint provided by LMRouter is compatible with the OpenAI image generation endpoint. It is available at
+
+```
+https://api.lmrouter.com/openai/v1/images/generations
+```
+
+Please refer to the [OpenAI image generation endpoint](https://platform.openai.com/docs/api-reference/images/create) for more information on how to use the image generation endpoint.
+
+## Additional Parameters
+
+In additional to the parameters supported by the OpenAI image generation endpoint, LMRouter also supports the following parameters for supported models:
+
+- `negative_prompt`: A prompt that describes what you do not want in the image.
+- `aspect_ratio`: The aspect ratio of the image.
+- `seed`: A random number used to seed the image generation.
+- `guidance_scale`: A number that controls the guidance of the image generation.
+- `num_inference_steps`: A number that controls the number of inference steps.
+- `enhance_prompt`: A boolean that controls whether to enhance the prompt.
+- `safety_tolerance`: A number that controls the safety tolerance of the image generation.

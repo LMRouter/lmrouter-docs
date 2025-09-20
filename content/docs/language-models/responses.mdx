@@ -2,3 +2,15 @@
 title: Responses API
 description: Generate responses with LMRouter
 ---
+
+The responses endpoint provided by LMRouter is compatible with the OpenAI responses endpoint. It is available at
+
+```
+https://api.lmrouter.com/openai/v1/responses
+```
+
+Please refer to the [OpenAI responses endpoint](https://platform.openai.com/docs/api-reference/responses/create) for more information on how to use the responses endpoint.
+
+## Conversation State
+
+Even if the provider doesn't support Responses API, you are able to use the LMRouter Responses API to maintain [conversation state](https://platform.openai.com/docs/guides/conversation-state#passing-context-from-the-previous-response). You can pass the previous response ID as the `previous_response_id` parameter in the request. LMRouter will be able to retrieve the previous response and use it to generate the next response.
