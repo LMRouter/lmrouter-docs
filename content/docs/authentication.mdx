@@ -2,3 +2,42 @@
 title: Authentication
 description: Authentication methods for LMRouter
 ---
+
+LMRouter supports two types of authentication:
+
+* API Key Authentication
+* Bring Your Own Key (BYOK)
+
+## API Key Authentication
+
+You can create an API key in your [dashboard](https://lmrouter.com/dashboard/api-keys). To use the API key, you can supply it as the `Authorization` header in your requests:
+
+```
+Authorization: Bearer <LMROUTER_API_KEY>
+```
+
+or as the `X-API-Key` header:
+
+```
+X-API-Key: <LMROUTER_API_KEY>
+```
+
+OpenAI-compatible clients will supply the API key in the `Authorization` header by default, and Anthropic-compatible clients will supply the API key in the `X-API-Key` header by default.
+
+## BYOK Authentication
+
+If you want to use your own API key for a third-party provider, you can do so by supplying the API key as the `Authorization` header in your requests:
+
+```
+Authorization: Bearer BYOK:<THIRD_PARTY_API_KEY>
+```
+
+or as the `X-API-Key` header:
+
+```
+X-API-Key: BYOK:<THIRD_PARTY_API_KEY>
+```
+
+If you are using your own API key, you can use a custom model supplied by the third-party provider in your requests, even if the model is not supported by LMRouter. Just pass `<PROVIDER_NAME>:<MODEL_NAME>` as the model name in your requests.
+
+**We do not charge you for using your own API key.**
