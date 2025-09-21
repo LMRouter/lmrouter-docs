@@ -1,4 +1,5 @@
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
+import { Github, Home } from 'lucide-react';
 
 /**
  * Shared layout configurations
@@ -25,6 +26,19 @@ export function baseOptions(): BaseLayoutProps {
       ),
     },
     // see https://fumadocs.dev/docs/ui/navigation/links
-    links: [],
+    links: [
+      {
+        icon: <Home />,
+        text: 'LMRouter Homepage',
+        url: 'https://lmrouter.com',
+        secondary: false,
+      },
+      {
+        icon: <Github />,
+        text: 'GitHub',
+        url: 'https://github.com/LMRouter/lmrouter',
+        secondary: false,
+      },
+    ],
   };
 }
