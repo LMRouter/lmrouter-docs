@@ -4,16 +4,18 @@ description: Language model features supported by LMRouter
 icon: MessageSquare
 ---
 
+import { MessageCircle, Mail, Reply } from 'lucide-react';
+
 Checkout the following pages for more information on how to use language model endpoints:
 
 <Cards>
-  <Card href="/language-models/chat-completions" title="Create Chat Completions">
+  <Card icon={<MessageCircle />} href="/language-models/chat-completions" title="Create Chat Completions">
     Generate chat completions with LMRouter
   </Card>
-  <Card href="/language-models/messages" title="Messages API">
+  <Card icon={<Mail />} href="/language-models/messages" title="Messages API">
     Generate messages with LMRouter
   </Card>
-  <Card href="/language-models/responses" title="Responses API">
+  <Card icon={<Reply />} href="/language-models/responses" title="Responses API">
     Generate responses with LMRouter
   </Card>
 </Cards>

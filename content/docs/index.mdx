@@ -4,6 +4,8 @@ description: Get started with LMRouter
 icon: Zap
 ---
 
+import { Reply, Mail, Palette, PenLine, Layers, Mic, FileAudio, Languages } from 'lucide-react';
+
 ## Introduction
 
 **LMRouter** is an **open-source**, **all-in-one** API router that gives AI developers a single, unified way to connect to the best model providers. It provides **OpenAI** and **Anthropic** compatible API endpoints, so you can use it with any OpenAI or Anthropic compatible client.
@@ -85,14 +87,14 @@ curl https://api.lmrouter.com/openai/v1/chat/completions \
 Apart from the [chat completions](/language-models/chat-completions) endpoint, LMRouter also supports
 
 <Cards>
-  <Card href="/language-models/responses" title="Responses API" />
-  <Card href="/language-models/messages" title="Messages API" />
-  <Card href="/image-models/image-generation" title="Image Generation" />
-  <Card href="/image-models/image-editing" title="Image Editing" />
-  <Card href="/embedding-models/embeddings" title="Embeddings" />
-  <Card href="/audio-models/speech" title="Audio Speech" />
-  <Card href="/audio-models/transcriptions" title="Audio Transcriptions" />
-  <Card href="/audio-models/translations" title="Audio Translations" />
+  <Card icon={<Reply />} href="/language-models/responses" title="Responses API" />
+  <Card icon={<Mail />} href="/language-models/messages" title="Messages API" />
+  <Card icon={<Palette />} href="/image-models/image-generation" title="Image Generation" />
+  <Card icon={<PenLine />} href="/image-models/image-editing" title="Image Editing" />
+  <Card icon={<Layers />} href="/embedding-models/embeddings" title="Embeddings" />
+  <Card icon={<Mic />} href="/audio-models/speech" title="Audio Speech" />
+  <Card icon={<FileAudio />} href="/audio-models/transcriptions" title="Audio Transcriptions" />
+  <Card icon={<Languages />} href="/audio-models/translations" title="Audio Translations" />
 </Cards>
 
 endpoints.

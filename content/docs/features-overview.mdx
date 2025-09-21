@@ -4,6 +4,8 @@ description: Overview of features supported by LMRouter
 icon: Grid3x3
 ---
 
+import { MessageSquare, Image, Network, Volume2 } from 'lucide-react';
+
 LMRouter provides a single, unified API for all your AI needs. Specifically, it provides an API endpoint that is compatible with both OpenAI and Anthropic clients. This means that you can use LMRouter with any OpenAI or Anthropic compatible client, or drop-in replace your OpenAI endpoint with the LMRouter endpoint, and use the LMRouter API key.
 
 The OpenAI-compatible endpoint is available at
@@ -21,16 +23,16 @@ https://api.lmrouter.com/anthropic
 Checkout the following pages for more information on how to use the endpoints:
 
 <Cards>
-  <Card href="/language-models" title="Language Models">
+  <Card icon={<MessageSquare />} href="/language-models" title="Language Models">
     LMRouter supports creating chat completions, responses, messages, and more
   </Card>
-  <Card href="/image-models" title="Image Models">
+  <Card icon={<Image />} href="/image-models" title="Image Models">
     LMRouter supports generating and editing images
   </Card>
-  <Card href="/embedding-models" title="Embedding Models">
+  <Card icon={<Network />} href="/embedding-models" title="Embedding Models">
     LMRouter supports creating embeddings
   </Card>
-  <Card href="/audio-models" title="Audio Models">
+  <Card icon={<Volume2 />} href="/audio-models" title="Audio Models">
     LMRouter supports creating speech, transcriptions, and translations
   </Card>
 </Cards>
