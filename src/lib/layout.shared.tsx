@@ -14,7 +14,7 @@ export function baseOptions(): BaseLayoutProps {
       title: (
         <>
           <img src="/icon.svg" alt="LMRouter" className="size-6" />
-          LMRouter
+          LMRouter Docs
         </>
       ),
     },
@@ -22,7 +22,7 @@ export function baseOptions(): BaseLayoutProps {
     links: [
       {
         icon: <Home />,
-        text: 'LMRouter Homepage',
+        text: 'LMRouter',
         url: 'https://lmrouter.com',
         secondary: false,
       },
