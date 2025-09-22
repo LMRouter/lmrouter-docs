@@ -44,8 +44,35 @@ export async function generateMetadata(
   const page = source.getPage(params.slug);
   if (!page) notFound();
 
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+  const ogImageUrl = `${baseUrl}/api/og?${new URLSearchParams({
+    title: page.data.title,
+    description: page.data.description || '',
+    type: 'docs',
+  }).toString()}`;
+
   return {
     title: `${page.data.title} | LMRouter`,
     description: page.data.description,
+    openGraph: {
+      title: `${page.data.title} | LMRouter`,
+      description: page.data.description,
+      type: 'website',
+      url: `${baseUrl}/${params.slug?.join('/') || ''}`,
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: page.data.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${page.data.title} | LMRouter`,
+      description: page.data.description,
+      images: [ogImageUrl],
+    },
   };
 }
