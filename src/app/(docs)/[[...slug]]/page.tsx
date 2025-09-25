@@ -55,11 +55,13 @@ export async function generateMetadata(
       type: "website",
       title,
       description,
+      images: "https://docs.lmrouter.com/icon.svg",
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: "https://docs.lmrouter.com/icon.svg",
     },
   };
 }
