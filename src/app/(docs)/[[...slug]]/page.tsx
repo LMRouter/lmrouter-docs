@@ -44,8 +44,22 @@ export async function generateMetadata(
   const page = source.getPage(params.slug);
   if (!page) notFound();
 
+  const title = `${page.data.title} | LMRouter Docs`;
+  const description = page.data.description;
+
   return {
-    title: `${page.data.title} | LMRouter`,
-    description: page.data.description,
+    title,
+    description,
+    openGraph: {
+      url: `https://docs.lmrouter.com/${params.slug?.join('/') || ''}`,
+      type: "website",
+      title,
+      description,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
   };
 }
