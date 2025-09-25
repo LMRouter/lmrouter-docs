@@ -12,6 +12,12 @@ import { Reply, Mail, Palette, PenLine, Layers, Mic, FileAudio, Languages } from
 
 ## Using the OpenAI-Compatible Endpoint
 
+The LMRouter OpenAI-compatible API base URL is:
+
+```
+https://api.lmrouter.com/openai/v1
+```
+
 You are able to drop-in replace your OpenAI endpoint with the LMRouter endpoint, and use the LMRouter API key:
 
 ```typescript tab="TypeScript"
@@ -100,6 +106,12 @@ Apart from the [chat completions](/language-models/chat-completions) endpoint, L
 endpoints.
 
 ## Using Claude Code
+
+The LMRouter Anthropic-compatible API base URL is:
+
+```
+https://api.lmrouter.com/anthropic
+```
 
 You are able to use the LMRouter Anthropic-compatible endpoint with Claude Code by setting the `ANTHROPIC_BASE_URL` and `ANTHROPIC_AUTH_TOKEN` environment variables. You are able to use any model provided by LMRouter with Claude Code:
 
